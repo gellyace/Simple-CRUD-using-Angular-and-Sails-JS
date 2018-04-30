@@ -1,0 +1,30 @@
+
+<div class="text-center">
+	<div class="form-signinbox">
+			<form ng-submit="updateMovie()" class="form-signin">
+			<h2 class="mb-3">Movie Details</h2><br>
+					<div>
+							<div>
+									<label>Title</label>
+									<input type="text" ng-model="title" class="form-control" value="{{movie.title}}" ng-readonly="!toggle" required autofocus>
+							</div>
+							<br>
+							<div>
+									<label>Genre</label> 
+									<input type="text" ng-model="genre" class="form-control" value="{{movie.genre}}" ng-readonly="!toggle" required>
+							</div>
+							<br>
+							<div>
+									<label>Description</label>
+									<input type="text" ng-model="description" class="form-control" value="{{movie.description}}" ng-readonly="!toggle" required>
+							</div>
+							<br>
+							<div ng-init="toggle=false">
+									<span><button type="button" class="btn btn-primary" ng-show="!toggle" ng-click="toggle=true">Update</button></span>
+									<span><button class="btn btn-primary" ng-show="toggle" type="submit">Save</button></span>
+									<span><button type="button" class="btn btn-primary" ng-click="back()">Back</button></span>
+							</div>
+					</div>
+			</form>
+	</div>
+</div>

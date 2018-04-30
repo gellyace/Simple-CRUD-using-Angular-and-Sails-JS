@@ -1,0 +1,50 @@
+<div class="container">
+  <h2>Movie List</h2><hr>
+  <div>
+      <!-- ADD MOVIE BUTTON -->
+      <a class="btn btn-info" href="#addMovie">Add Movie</a>
+      <!-- SEARCH FORM -->
+      <form class="form-inline" style="float: right">
+        <div class="form-group">
+            <label>Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+      </form>
+  </div>
+</div>
+
+<div class="data-table" style="text-align: center">
+  <table border="1" cellpadding="7" cellspacing="7" align="center" class="table table-striped" style="width: 60%">
+    <thead>
+      <th ng-click="sort('id')" style="text-align: center">
+        Movie ID
+        <span class="glyphicon sort-icon" ng-show="sortKey == 'id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('title')" style="text-align: center">
+        Movie Title 
+        <span class="glyphicon sort-icon" ng-show="sortKey == 'title'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('genre')" style="text-align: center">
+        Movie Genre 
+        <span class="glyphicon sort-icon" ng-show="sortKey == 'genre'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th ng-click="sort('description')" style="text-align: center">
+        Movie Description 
+        <span class="glyphicon sort-icon" ng-show="sortKey == 'description'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+      </th>
+      <th style="text-align: center">Action</th>
+    </thead>
+    <tr dir-paginate="movie in movieList |orderBy:sortKey:reverse | filter:search | itemsPerPage:5">
+      <td class="active">{{movie.id}}</td>
+      <td class="success">{{movie.title}}</td>
+      <td class="success">{{movie.genre}}</td>
+      <td class="success">{{movie.description}}</td>
+      <td class="info" style="text-align: center">
+        <a class="btn btn-primary" href="#find/{{movie.id}}">Details</a> |
+        <button class="btn btn-danger" type="button" ng-click="modal($index,movie.id)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+      </td>
+    </tr>
+  </table>
+
+  <dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" ></dir-pagination-controls>
+</div>

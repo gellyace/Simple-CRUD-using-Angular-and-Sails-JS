@@ -1,0 +1,26 @@
+<div class="text-center">
+    <div class="form-signinbox">
+        <form class="form-signin" ng-submit="addMovie()">
+        <h2 class="mb-3">Add New Movie</h2><br>
+            <div>
+                <div>
+                    <label>Title</label>
+                    <input type="text" ng-model="title" class="form-control" required autofocus>
+                </div>
+                <br>
+                <div>
+                    <label>Genre</label> 
+                    <input type="text" ng-model="genre" class="form-control" required>
+                </div>
+                <br>
+                <div>
+                    <label>Description</label>
+                    <input type="text" ng-model="description" class="form-control" required>
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit">Add</button> | 
+                <button class="btn btn-primary" ng-click="back()">Back</button>
+            </div>
+        </form>
+    </div>
+</div>
