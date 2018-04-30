@@ -1,0 +1,8 @@
+Blog_App/.tmp/*
+Blog_App/node_modules/*
+Blog_App/assets/bower_components/*
+Blog_App/tasks/config/*
+Blog_App/tasks/register/*
+
+Blog_App/.sails
+Blog_App/.waterline

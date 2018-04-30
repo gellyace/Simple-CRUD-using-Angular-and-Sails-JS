@@ -1,0 +1,33 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<div class="text-center">
+    <div class="form-signinbox">
+        <form role="form" method="post" action="/movies/find/<%= movies.id %>" class="form-signin">
+        <h2 class="mb-3">Movie Details</h2><br>
+            <div>
+                <div>
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control" value="<%= movies.title %>" required autofocus readonly>
+                </div>
+                <br>
+                <div>
+                    <label>Genre</label> 
+                    <input type="text" name="genre" class="form-control" value="<%= movies.genre %>" required readonly>
+                </div>
+                <br>
+                <div>
+                    <label>Description</label>
+                    <input type="text" name="description" class="form-control" value="<%= movies.description %>" required readonly>
+                </div>
+                <br>
+                <div>
+                    <span><button id="btnEdit" class="btn btn-primary" type="button">Update</button></span>
+                    <span><button id="btnSave" class="btn btn-primary" type="submit" hidden>Save</button></span>
+                    <span><a href="/movies/index" class="btn btn-primary">Back</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
